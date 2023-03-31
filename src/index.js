@@ -38,5 +38,55 @@ const siteContent = { // DO NOT CHANGE THIS OBJECT
     "accent-img": "http://localhost:9000/img/accent.png",
   },
 };
+// images
+const logoImg = document.querySelector('#logo-img');
+logoImg.src = siteContent.images['logo-img'];
 
-console.log('project wired!')
+const ctaImg = document.querySelector('#cta-img');
+ctaImg.src = siteContent.images['cta-img'];
+
+const accentImg = document.querySelector('.middle-img');
+accentImg.src = siteContent.images['accent-img'];
+
+// header
+const navLinks = document.querySelectorAll('header nav a');
+const navLinkTexts = Object.values(siteContent.nav)
+navLinks.forEach((links, idx) => {
+  links.textContent = navLinkTexts[idx]
+  links.classList.add('italic');
+})
+
+// cta
+const headerOne = document.querySelector('section h1');
+headerOne.textContent = siteContent.cta['h1'];
+
+const button = document.querySelector('section button');
+button.textContent = siteContent.cta['button'];
+
+// footer
+const footer = document.querySelector('footer a');
+footer.textContent = siteContent.footer['copyright'];
+footer.classList.add('bold');
+
+// contact
+const contact = document.querySelector('section.contact');
+contact.children[0].textContent = siteContent.contact['contact-h4'];
+contact.children[1].textContent = siteContent.contact['address'];
+contact.children[2].textContent = siteContent.contact['phone'];
+contact.children[3].textContent = siteContent.contact['email'];
+
+// top content
+const topContent = document.querySelector('.top-content');
+topContent.children[0].children[0].textContent = siteContent["main-content"]['features-h4'];
+topContent.children[0].children[1].textContent = siteContent["main-content"]['features-content'];
+topContent.children[1].children[0].textContent = siteContent["main-content"]['about-h4'];
+topContent.children[1].children[1].textContent = siteContent["main-content"]['about-content'];
+
+// bottom content
+const bottomContent = document.querySelector('.bottom-content');
+bottomContent.children[0].children[0].textContent = siteContent["main-content"]['services-h4'];
+bottomContent.children[0].children[1].textContent = siteContent["main-content"]['services-content'];
+bottomContent.children[1].children[0].textContent = siteContent["main-content"]['product-h4'];
+bottomContent.children[1].children[1].textContent = siteContent["main-content"]['product-content'];
+bottomContent.children[2].children[0].textContent = siteContent["main-content"]['vision-h4'];
+bottomContent.children[2].children[1].textContent = siteContent["main-content"]['vision-content'];
